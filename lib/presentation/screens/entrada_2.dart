@@ -4,8 +4,8 @@ import 'package:mis_recetas/ui_theme/styles/text_style_app.dart';
 
 import 'package:mis_recetas/widgets/widgets.dart';
 
-class EntradaUno extends StatelessWidget {
-  const EntradaUno({super.key});
+class EntradaDos extends StatelessWidget {
+  const EntradaDos({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,6 @@ class EntradaUno extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(left: 20),
             alignment: Alignment.topLeft,
-            //height: double.infinity,
             width: double.infinity,
             child: LocaleText(
               "titulo",
