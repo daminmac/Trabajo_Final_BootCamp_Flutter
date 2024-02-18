@@ -4,8 +4,8 @@ import 'package:mis_recetas/ui_theme/styles/text_style_app.dart';
 
 import 'package:mis_recetas/widgets/widgets.dart';
 
-class EntradaDos extends StatelessWidget {
-  const EntradaDos({super.key});
+class EntradaTres extends StatelessWidget {
+  const EntradaTres({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +13,27 @@ class EntradaDos extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget> [
-          const TituloEntrada(numPantalla: 2),
+          const TituloEntrada(numPantalla: 3),
           Container(
             padding: const EdgeInsets.only(left: 20, right: 10,),
             alignment: Alignment.topLeft,
             width: double.infinity,
-            child: LocaleText(
-              "entrada2_texto",
-              style: textStyleBase.h215,
+            child: Column(
+              children: [
+                LocaleText(
+                  "entrada3_1_texto",
+                  style: textStyleBase.h215,
+                ),
+                //const SizedBox(height: 5),
+                LocaleText(
+                  "entrada3_2_texto",
+                  style: textStyleBase.h215,
+                ),
+              ],
             ),
           ),
-          const CentroEntrada(numPantalla: 2),
-          const PieEntrada(numPantalla: 2),
+          const CentroEntrada(numPantalla: 3),
+          const PieEntrada(numPantalla: 3),
         ],
       ),
     );

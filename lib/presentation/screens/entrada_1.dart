@@ -13,7 +13,7 @@ class EntradaUno extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget> [
-          TituloEntrada(),
+          const TituloEntrada(numPantalla: 1),
           Container(
             padding: const EdgeInsets.only(left: 20),
             alignment: Alignment.topLeft,
@@ -24,8 +24,8 @@ class EntradaUno extends StatelessWidget {
               style: textStyleBase.h236,
             ),
           ),
-          const CentroEntrada(),
-          const PieEntrada(),
+          const CentroEntrada(numPantalla: 1),
+          const PieEntrada(numPantalla: 1),
         ],
       ),
     );
