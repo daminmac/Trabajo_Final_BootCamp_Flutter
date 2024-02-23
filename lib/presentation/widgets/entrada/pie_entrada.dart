@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mis_recetas/presentation/screens/screens.dart';
 import 'package:mis_recetas/ui_theme/styles/text_style_app.dart';
 
@@ -24,7 +25,6 @@ class PieEntrada extends StatelessWidget {
             ),
           ),
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: _crossAlignment(numPantalla),
             children: [
               if (numPantalla != 1)
@@ -77,20 +77,33 @@ class PieEntrada extends StatelessWidget {
                     ),
                   (numPantalla != 3)
                       ? IconButton(
-                      icon: const Icon(Icons.arrow_forward),
-                      onPressed: () {
-                        numPantalla == 1
-                            ? Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const EntradaDos()))
-                            : Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const EntradaTres()));
-                        }
-                      )
-                      : LocaleText('entrar_mayus', style: textStyleBase.h116),
+                          icon: const Icon(Icons.arrow_forward),
+                          onPressed: () {
+                            numPantalla == 1
+                                ? Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const EntradaDos()))
+                                : Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const EntradaTres()));
+                          })
+                      : GestureDetector(
+                          onTap: () {
+                            print('Has pulsado "ENTRAR"');
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => const SignIn()),
+                              (route) => false,
+                            );
+                          },
+                          child: LocaleText(
+                            'entrar_mayus',
+                            style: textStyleBase.h116,
+                          )),
                 ],
               ),
             ],

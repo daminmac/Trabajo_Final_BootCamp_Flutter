@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'package:mis_recetas/ui_theme/styles/text_style_app.dart';
 
-import 'package:mis_recetas/widgets/widgets.dart';
+import 'package:mis_recetas/presentation/widgets/widgets.dart';
 
 class EntradaUno extends StatelessWidget {
   const EntradaUno({super.key});
